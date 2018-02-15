@@ -16,6 +16,7 @@ public class Tickets
         }
         else
         {
+            System.out.println("Unfortunately it is not Wednesday");
             System.out.println("\nYou have ordered " + amount + " Standard Tickets");
             int standardTickPrice = amount * 8;
             System.out.println("Standard Ticket SubTotal : £" + standardTickPrice );
@@ -71,7 +72,7 @@ public class Tickets
         }
         else
         {
-            int childTickPrice = amount * 2;
+            int childTickPrice = amount * 4;
             System.out.println("Child Ticket SubTotal : £" + childTickPrice );
             return childTickPrice;
         }

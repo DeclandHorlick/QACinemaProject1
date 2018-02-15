@@ -1,7 +1,13 @@
 public class TotalPrice
 {
-    public int returnTotalPrice()
+    public int returnTotalPrice(int stdATickets,int stuATickets,int oapATickets,int childATickets)
     {
+
+        int standardTickets = stdATickets;
+        int studentTickets = stuATickets;
+        int oapTickets = oapATickets;
+        int childTickets = childATickets;
+
         int standardPrice=0;
         int oApPrice=0;
         int studentPrice=0;
@@ -10,10 +16,10 @@ public class TotalPrice
 
         Tickets buyTickets = new Tickets();
         try {
-            standardPrice = buyTickets.StandardTicketAmount(4);
-            oApPrice = buyTickets.OAPTicketAmount(1);
-            studentPrice = buyTickets.StudentTicketAmount(1);
-            childPrice = buyTickets.ChildTicketAmount(1);
+            standardPrice = buyTickets.StandardTicketAmount(standardTickets);
+            oApPrice = buyTickets.OAPTicketAmount(studentTickets);
+            studentPrice = buyTickets.StudentTicketAmount(oapTickets);
+            childPrice = buyTickets.ChildTicketAmount(childTickets);
             totalPrice = standardPrice + oApPrice + studentPrice + childPrice;
         }
         catch(ArithmeticException e)
